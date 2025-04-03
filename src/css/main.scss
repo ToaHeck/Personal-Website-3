@@ -1,21 +1,25 @@
-//import font from google
+// Import Google Font
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
-//import custom css to override bootstrap
-@import './abstracts/variables';
-@import './abstracts/styles';
-@import './abstracts/mapping';
+// Import Bootstrap using @use
+@use "~bootstrap/scss/functions" as *;
+@use "~bootstrap/scss/maps" as *;
+@use "~bootstrap/scss/mixins" as *;
+@use "~bootstrap/scss/bootstrap" as *;
 
-//merge maps
+// Import custom SCSS to override Bootstrap variables and styles
+@use './abstracts/variables' as *;
+@use './abstracts/styles' as *;
+@use './abstracts/mapping' as *;
+
+// Merge custom theme colors with Bootstrap's theme colors
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/maps";
-@import "~bootstrap/scss/mixins";
-
-//import bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-:root{
+// Apply custom font to the root for body font
+:root {
     --bs-body-font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+    font-family: var(--bs-body-font-family);
 }
