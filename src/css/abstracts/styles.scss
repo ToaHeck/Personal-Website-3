@@ -1,0 +1,336 @@
+@import "~bootstrap/scss/bootstrap";
+
+/* Variables */
+:root {
+    --primary-color: #7B1FB5;                   /* Purple */
+    --secondary-color: #682E8C;                 /* Slightly Darker Purple */
+    --tertiary-color: #53167A;                  /* Dark Purple; almost black */
+    --text-color: #EDE8EC;                      /* Off-white */
+    --title-color: #EEDEF4;                     /* Off-purple */
+    --background-color-primary: #3A393A;        /* Dark gray */
+    --background-color-secondary: #2D1A38;      /* Dark Purple Black */
+    --black-color: #0c0014;                     /* "Black" */
+    --delay: 5s;
+    --slides: 4;
+    --height: 40px;
+  }
+
+html {
+    background-color: var(--tertiary-color);
+}
+
+
+
+.unstyled-link{
+    text-decoration: none !important;
+    color: inherit !important;
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.icon-square{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+}
+
+.square-container {
+    width: 100%;
+    padding-top: 100%; /* 1:1 aspect ratio for square */
+    background-color: var(--bs-secondary-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.square-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+* {
+    color: var(--text-color);
+}
+
+.nav-item a {
+    color: var(--title-color);
+}
+
+.navbar-blur {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.portfolio-blur {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+}
+
+/* Glow effect styles */
+.cursor-glow {
+    position: fixed; /* Use fixed to ensure it stays in place during scrolling */
+    width: 200px;  /* Customize size */
+    height: 200px; /* Customize size */
+    border-radius: 50%;
+    background: rgba(238, 222, 244, 0.2); /* Glow color */
+    pointer-events: none; /* Ensures it doesn’t block clicks */
+    transform: translate(-50%, -50%); /* Center it around the cursor */
+    z-index: 9999; /* Ensure it's on top of other content */
+    transition: none; /* Disable transitions for instant movement */
+    filter: blur(100px); /* Add the blur effect */
+}
+
+
+
+/* Default styles (if any) */
+#circle-portrait {
+    display: block; /* Already has d-block, but ensuring it’s explicit */
+    padding: 0; /* Remove any padding if present */
+}
+
+
+
+/* Default styles (desktop) */
+.nav-link {
+    padding: 0.5rem 1rem; /* Default padding */
+    font-size: 1rem; /* Default font size */
+}
+  
+  .nav.nav-pills {
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+  
+
+
+
+
+
+
+/* Custom Modal Size for Portfolio Modals */
+.modal-dialog.modal-lg-custom {
+    max-width: 90%;  /* Width set to 90% of the screen */
+    max-height: 90%;  /* Height set to 90% of the viewport height */
+    margin: 5% auto;  /* Center the modal vertically and horizontally */
+  }
+  
+  .modal-body-custom {
+    overflow-y: auto;  /* Allow scrolling inside the modal if content overflows */
+    max-height: 80vh;  /* Set a maximum height for the content area */
+  }
+
+  
+/* Mobile stlyes */
+@media (max-width: 767.98px) {
+    #image-col {
+      padding-left: 0; /* Remove column padding */
+      padding-right: 0; /* Remove column padding */
+    }
+  
+    #circle-portrait {
+      margin-left: auto; /* Ensure centering */
+      margin-right: auto; /* Ensure centering */
+      padding: 0; /* Remove any padding */
+    }
+  
+    /* Optional: Reduce row gutters if they’re pushing content */
+    .row.g-5 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .navbar-nav {
+        flex-wrap: nowrap; /* Keep items in one row */
+        flex-direction: row; /* Ensure horizontal layout */
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.25rem 0.5rem; /* Smaller padding */
+        font-size: 0.6rem; /* Much smaller font */
+    }
+    
+    .navbar-blur {
+        padding: 0.5rem; /* Reduce overall navbar padding */
+    }
+}
+
+
+/* Splash screen styling */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out; /* Smoother transition */
+}
+
+/* Background overlay for blur and transparency */
+#splash-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0c0014db;
+    backdrop-filter: blur(20px); /* Blurred effect */
+    z-index: -1; /* Behind the text and image */
+}
+
+/* Hidden state for smooth fade-out */
+#splash-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Text center with animation */
+#splash-screen .text-center {
+    position: relative;
+    z-index: 1; /* Keeps text and image above the background */
+    animation: textFadeIn 1.5s ease-out forwards; /* Fade in and slide up */
+}
+
+/* Image styling */
+#splash-screen img {
+    max-width: 200px;
+    margin: 20px;
+}
+
+/* Animation keyframes for text */
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Starts 20px below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Moves to final position */
+    }
+}
+
+/* Gradient Animation */
+.gradient-background {
+    background: linear-gradient(300deg, var(--black-color), var(--tertiary-color), var(--black-color));
+    background-size: 200% 100%;
+    animation: gradient-animation 18s ease infinite;
+}
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    } 
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Hero Text Animation */
+.masked-text {
+    font-size: calc(2vw + 3.5rem); /* Responsive font size */
+    font-weight: bold;
+    color: transparent;
+    background-image: url('/src/img/unsplash-background.jpg'); 
+    background-size: 400%; /* Enlarged for smooth animation */
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 10s infinite alternate ease-in-out;
+}
+
+@keyframes animate-background{
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.card-hover {
+    transition: transform 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+}
+
+
+
+
+
+
+
+
+/*Rolodex Animation*/
+/* Rolodex Animation */
+
+.rolodex {
+  overflow: hidden;
+  
+  p {
+    margin: 0;
+  }
+  
+  ul {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+  }
+  
+  > p,
+  ul,
+  li .rolodex-item{
+    float: left;
+  }
+  
+  li:before {
+    content: "\a0";
+    float: left;
+  }
+
+  li + li {
+    clear: left;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .roll {
+    animation: roll-up 16s infinite cubic-bezier(.75,0,.25,1);
+  }
+}
+
+
+
+@keyframes roll-up {
+  0%, 20%, 100% { transform: translateY(0) }
+  40% { transform: translateY(-1 * 2em) }
+  60%, 80% { transform: translateY(-2 * 2em) }
+  100% { transform: translateY(-4 * 2e) }
+}

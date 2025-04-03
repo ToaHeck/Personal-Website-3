@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To'a Heck</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="favicons/favicon.ico" type="image/x-icon">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link href="./css/styles.css" rel="stylesheet"> -->
+        <link href="./css/main.scss" rel="stylesheet">
+    </head>
+
+    <body class="gradient-background">
+        <!-- Splash Screen -->
+        <div id="splash-screen">
+            <div class="text-center">
+                <h1>Welcome to My Portfolio</h1>
+                <p>This site is entirely monochromatic.</p>
+                <p>Every color you see, including the greys and whites, is a <u style="text-decoration-color: var(--primary-color);"> <span class="text-primary">shade of purple</span></u> pulled from this color wheel.</p>
+                <img src="/src/img/colorwheel1.png" alt="Logo">
+            </div>
+            <button class="btn btn-primary mt-3" onclick="closeSplash()">Enter</button>
+        </div>
+
+        <!-- Navbar -->
+        <div class="container">
+            <nav class="navbar fixed-top navbar-blur shadow-lg navbar-expand">
+                <div class="container-fluid"> 
+                    <div class="navbar-nav ms-auto pe-3">
+                        <ul class="nav nav-pills pe-3">
+                            <li class="nav-item"><a href="#title" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="#about-me" class="nav-link">About Me</a></li>
+                            <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                            <li class="nav-item"><a href="#artwork" class="nav-link">Artwork</a></li>
+                            <li class="nav-item"><a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#resumeModal">Resume</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+
+        <!-- Hero -->
+        <section id="title" class="pt-6">
+            <div class="container col-xxl-8 px-4 py-5">
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                    <div class="col-12 col-sm-8 col-lg-6" id="image-col">
+                      <img src="./img/circle-portrait-tinted.png" class="d-block mx-auto img-fluid" id="circle-portrait" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="display-5 fw-bold lh-1 mb-3 text-white">Hi, I'm</h1>
+                        <div class="masking-container">
+                            <h1 class="masked-text"> To'a Heck </h1>
+                        </div>
+                      <p class="lead">Junior Software Engineer / IT Applications Specialist</p>
+                      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 d-flex align-items-center" onclick="window.open('https://www.linkedin.com/in/toa-heck/', '_blank')">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-linkedin me-2" viewBox="0 0 16 16" style="font-size: 1.2em" fill="currentColor">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"></path>
+                          </svg>
+                          LinkedIn
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-4 d-flex align-items-center" onclick="window.open('https://github.com/toaheck', '_blank')">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-github me-2" viewBox="0 0 16 16" style="font-size: 1.2em" fill="currentColor">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"></path>
+                          </svg>
+                          Github
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </section>
+
+
+        <!-- Hanging Icons Section-->
+        <div class="container px-4 py-5" id="hanging-icons">
+            <h2 class="fs-1 pb-2 border-bottom fw-bold">What I do</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2rem" width="2rem" fill="#3A393A" class="bi bi-code-slash" viewBox="0 0 16 16">
+                            <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+                          </svg>
+                    </div>
+                <div>
+                    <h3 class="fs-2 fw-bold text-light">Software Development</h3>
+                    <ul>
+                        <li>Maintaining and updating web applications to ensure smooth operation and performance.</li>
+                        <li>Developing mobile apps for iOS and Android with intuitive interfaces and seamless experiences.</li>
+                        <li>Writing Python scripts to automate tasks and solve complex problems efficiently.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2rem" width="2rem" fill="#3A393A" class="bi bi-database-fill-gear" viewBox="0 0 16 16">
+                        <path d="M8 1c-1.573 0-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4s.875 1.755 1.904 2.223C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777C13.125 5.755 14 5.007 14 4s-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1"/>
+                        <path d="M2 7v-.839c.457.432 1.004.751 1.49.972C4.722 7.693 6.318 8 8 8s3.278-.307 4.51-.867c.486-.22 1.033-.54 1.49-.972V7c0 .424-.155.802-.411 1.133a4.51 4.51 0 0 0-4.815 1.843A12 12 0 0 1 8 10c-1.573 0-3.022-.289-4.096-.777C2.875 8.755 2 8.007 2 7m6.257 3.998L8 11c-1.682 0-3.278-.307-4.51-.867-.486-.22-1.033-.54-1.49-.972V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13h.027a4.55 4.55 0 0 1 .23-2.002m-.002 3L8 14c-1.682 0-3.278-.307-4.51-.867-.486-.22-1.033-.54-1.49-.972V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.5 4.5 0 0 1-1.3-1.905m3.631-4.538c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0"/>
+                    </svg>
+                </div>
+            <div>
+                <h3 class="fs-2 fw-bold text-light">IT / Business Applications</h3>
+                <ul>
+                    <li>Managing database operations and implementing security protocols to protect data.</li>
+                    <li>Organizing and tracking project tasks using Jira dashboards and tickets.</li>
+                    <li>Troubleshooting and resolving technical issues promptly to minimize downtime.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg xmlns="http://www.w3.org/2000/svg" height="2rem" width="2rem" fill="#3A393A" class="bi bi-paint-bucket" viewBox="0 0 16 16">
+                    <path d="M6.192 2.78c-.458-.677-.927-1.248-1.35-1.643a3 3 0 0 0-.71-.515c-.217-.104-.56-.205-.882-.02-.367.213-.427.63-.43.896-.003.304.064.664.173 1.044.196.687.556 1.528 1.035 2.402L.752 8.22c-.277.277-.269.656-.218.918.055.283.187.593.36.903.348.627.92 1.361 1.626 2.068.707.707 1.441 1.278 2.068 1.626.31.173.62.305.903.36.262.05.64.059.918-.218l5.615-5.615c.118.257.092.512.05.939-.03.292-.068.665-.073 1.176v.123h.003a1 1 0 0 0 1.993 0H14v-.057a1 1 0 0 0-.004-.117c-.055-1.25-.7-2.738-1.86-3.494a4 4 0 0 0-.211-.434c-.349-.626-.92-1.36-1.627-2.067S8.857 3.052 8.23 2.704c-.31-.172-.62-.304-.903-.36-.262-.05-.64-.058-.918.219zM4.16 1.867c.381.356.844.922 1.311 1.632l-.704.705c-.382-.727-.66-1.402-.813-1.938a3.3 3.3 0 0 1-.131-.673q.137.09.337.274m.394 3.965c.54.852 1.107 1.567 1.607 2.033a.5.5 0 1 0 .682-.732c-.453-.422-1.017-1.136-1.564-2.027l1.088-1.088q.081.181.183.365c.349.627.92 1.361 1.627 2.068.706.707 1.44 1.278 2.068 1.626q.183.103.365.183l-4.861 4.862-.068-.01c-.137-.027-.342-.104-.608-.252-.524-.292-1.186-.8-1.846-1.46s-1.168-1.32-1.46-1.846c-.147-.265-.225-.47-.251-.607l-.01-.068zm2.87-1.935a2.4 2.4 0 0 1-.241-.561c.135.033.324.11.562.241.524.292 1.186.8 1.846 1.46.45.45.83.901 1.118 1.31a3.5 3.5 0 0 0-1.066.091 11 11 0 0 1-.76-.694c-.66-.66-1.167-1.322-1.458-1.847z"/>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2 fw-bold text-light">Artwork & Graphic Design</h3>
+                <ul>
+                    <li>Designing advertisements using various visual mediums to attract the target audience.</li>
+                    <li>Creating personal artwork in my free time to explore creativity and improve skills.</li>
+                    <li>Collaborating with other artists to bring their creative visions to life.</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- Divider-->
+        <hr id="about-me" class="featurette-divider">
+
+        <!-- About Me 1 -->
+        <div class="container py-5">
+        <div class="row featurette">
+            <div class="col-md-7 pb-0">
+                <h2 class="featurette-heading fs-1 fw-bold lh-1 pt-4"> <u>Who I am</u> </h2>
+                <p class="lead">
+                    <p> 
+                        Welcome to my portfolio website! I am To'a Heck, a recent grad from 
+                        California State University, East Bay as of December 2023. I am 
+                        passionate about computer science and would like to build a dynamic 
+                        career and make an impact within an innovative technology company. 
+                        As a software developer, I am looking for a highly collaborative 
+                        enviroinment where I can contribute my expertise in designing, 
+                        developing, and executing solutions to enhance the quality of 
+                        customer experiences. 
+                    </p>
+    
+                    <p>
+                        I would like to explore my full potential as a new graduate by
+                        joining a collaborative team to solve cutting-edge problems while
+                        exploring and learning new tools, technologies, and the world of
+                        business.
+                    </p>
+    
+                    <p>
+                        <strong>Other contributions I would like to make during my career:</strong>
+                        <ul class="pb-0">
+                            <li>Cultivate a culture of design and art amongst software engineers by blending the beauty of art and the art of science.</li>
+                            <li>Share what I learn along the way to mentor and teach those less experienced than myself</li>
+                            <li>Be an advocate for increasing Polynesians in the field of computer science.</li>
+                        </ul>
+                    </p>
+                </p>
+            </div>
+            <div class="col-md-5">
+                <div class="square-container position-relative rounded-5">
+                    <img src="./img/portrait-vertical-tinted.jpg" class="img-fluid position-absolute top-50 start-50 translate-middle shadow-sm rounded-5" alt="Portrait of To'a Heck">
+                  </div>
+            </div>
+        </div>
+        </div>
+        
+        <!-- Divider-->
+        <hr class="featurette-divider">
+
+        <!-- About Me 2 -->
+        <div class="container py-5">
+            <div class="row featurette align-items-center">
+                <!-- Text Column -->
+                <div class="col-md-7 order-md-2 ps-5">
+                    <h2 class="featurette-heading fs-1 fw-bold lh-1 pb-4 pt-4 pt-md-0">
+                        <u>Technologies & Frameworks</u> <span class="fw-normal text-light">I’m Familiar With</span>
+                    </h2>
+
+                    <!-- Core Programming Languages -->
+                    <div class="mb-4">
+                        <h3 class="h4 fw-semibold text-light">Core Programming Languages</h3>
+                        <ul class="list-unstyled d-flex flex-wrap gap-3">
+                            <li class="badge bg-dark text-white p-2">Python 3</li>
+                            <li class="badge bg-dark text-white p-2">Java</li>
+                            <li class="badge bg-dark text-white p-2">C++</li>
+                            <li class="badge bg-dark text-white p-2">JavaScript</li>
+                            <li class="badge bg-dark text-white p-2">Swift</li>
+                        </ul>
+                    </div>
+
+                    <!-- Web Development -->
+                    <div class="mb-4">
+                        <h3 class="h4 fw-semibold text-light">Web Development</h3>
+                        <ul class="list-unstyled d-flex flex-wrap gap-3">
+                            <li class="badge bg-dark text-white p-2">HTML5</li>
+                            <li class="badge bg-dark text-white p-2">CSS</li>
+                            <li class="badge bg-dark text-white p-2">React</li>
+                            <li class="badge bg-dark text-white p-2">Tailwind</li>
+                            <li class="badge bg-dark text-white p-2">Bootstrap</li>
+                        </ul>
+                    </div>
+
+                    <!-- Databases & Data -->
+                    <div class="mb-4">
+                        <h3 class="h4 fw-semibold text-light">Databases & Data</h3>
+                        <ul class="list-unstyled d-flex flex-wrap gap-3">
+                            <li class="badge bg-dark text-white p-2">SQL</li>
+                            <li class="badge bg-dark text-white p-2">MS SQL Server</li>
+                            <li class="badge bg-dark text-white p-2">MySQL</li>
+                            <li class="badge bg-dark text-white p-2">Firebase</li>
+                            <li class="badge bg-dark text-white p-2">ETL Processes</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools & Platforms -->
+                    <div class="mb-4">
+                        <h3 class="h4 fw-semibold text-light">Tools & Platforms</h3>
+                        <ul class="list-unstyled d-flex flex-wrap gap-3">
+                            <li class="badge bg-dark text-white p-2">Git</li>
+                            <li class="badge bg-dark text-white p-2">Xcode</li>
+                            <li class="badge bg-dark text-white p-2">Android Studio</li>
+                            <li class="badge bg-dark text-white p-2">IIS</li>
+                            <li class="badge bg-dark text-white p-2">Jira</li>
+                            <li class="badge bg-dark text-white p-2">SAP</li>
+                        </ul>
+                    </div>
+
+                    <!-- Creative Tools -->
+                    <div class="mb-4">
+                        <h3 class="h4 fw-semibold text-light">Creative Tools</h3>
+                        <ul class="list-unstyled d-flex flex-wrap gap-3">
+                            <li class="badge bg-dark text-white p-2">Adobe Premiere</li>
+                            <li class="badge bg-dark text-white p-2">Adobe After Effects</li>
+                            <li class="badge bg-dark text-white p-2">Adobe Photoshop</li>
+                            <li class="badge bg-dark text-white p-2">Blender</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Column -->
+                <div class="col-md-5 order-md-1 text-center mb-4 mb-md-0 pe-5">
+                    <img src="img/framework-logos.png" class="img-fluid" alt="React, Python, and Swift logos" width="100%">
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider-->
+        <div class="py-5">
+            <hr id="portfolio" class="featurette-divider">
+        </div>
+
+        <!--Portfolio Section-->
+        <div class="container py-5 portfolio-blur rounded-4 shadow-lg">
+            <h2 class="featurette-heading fs-1 fw-bold lh-1 pb-4 text-center"><u>My Work</u></h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Card 1 -->
+                <div class="col d-flex justify-content-center">
+                    <div class="card bg-dark text-light shadow w-90 w-md-75 card-hover">
+                        <img src="/src/img/what-flower-logo.jpg" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="fw-bold"><u>iOS:</u></span> AI Flower Detection</h5>
+                            <p class="card-text">Using AI to identify flower species.</p>
+                            <a href="https://github.com/ToaHeck/AI-Flower-Detector-iOS16" target="_blank" class="btn btn-primary">Github Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col d-flex justify-content-center">
+                    <div class="card bg-dark text-light shadow w-90 w-md-75 card-hover">
+                        <img src="/src/img/db-logo.jpg" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="fw-bold"><u>Python:</u></span> Excel Data Manipulation</h5>
+                            <p class="card-text">Automating tasks to update web apps and  saving time.</p>
+                            <a href="https://github.com/ToaHeck/Python-Update-List" target="_blank" class="btn btn-primary">Github Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col d-flex justify-content-center">
+                    <div class="card bg-dark text-light shadow w-90 w-md-75 card-hover">
+                        <img src="/src/img/spotify-top-ten-logo.png" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="fw-bold"><u>JavaScript:</u></span> Spotify Top Tracks</h5>
+                            <p class="card-text">View your most played tracks from the past month</p>
+                            <a href="https://stellular-maamoul-f64cd9.netlify.app/" target="_blank" class="btn btn-primary">Project Site</a>
+                            <a href="https://github.com/ToaHeck/Spotify-Top-10" target="_blank" class="btn btn-primary">Github Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+
+        <!-- Divider-->
+        <div class="py-5">
+            <hr id="artwork" class="featurette-divider">
+        </div>
+
+
+
+        <!-- Artwork -->
+        <div class="container px-4 py-5" id="custom-cards">
+            <h2 class="fs-1 pb-2 border-bottom"><u>Artwork</u></h2>
+            <h5 class="fs-1 pb-2 text-center">Coming Soon</h4>
+            
+        <!--
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+              <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('/src/img/santo.jpg'); background-size: cover; background-position: center;">
+                  <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Poster Design</h3>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('/src/img/santo.jpg'); background-size: cover; background-position: center;">
+                  <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">3D Rendering</h3>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('/src/img/journey.mp4');background-size: cover; background-position: center;">
+                  <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Product Mockups</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        -->
+        </div>
+      
+
+
+
+        <!-- TEST-->
+
+
+
+
+
+        <!-- Footer -->
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-body-primary">© 2025 To'a Heck. All rights reserved.</span>
+                </div>
+            
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-body-primary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+                <li class="ms-3"><a class="text-body-primary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                <li class="ms-3"><a class="text-body-primary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                </ul>
+            </footer>
+        </div>
+
+
+        <!-- Resume Hover Modal -->
+        <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content shadow-lg rounded-4">
+                    <div class="modal-header bg-dark">
+                        <h5 class="modal-title" id="resumeModalLabel">To'a Heck's Resume</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <img src="./img/Toa_Heck_Resume.png" class="img-fluid" alt="To'a Heck Resume">
+                    </div>
+                    <div class="modal-footer bg-dark">
+                        <a href="./img/Toa_Heck_Resume.pdf" download="Toa_Heck_Resume.pdf" class="btn btn-primary">Download</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  
+
+    </body>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+    <script type="module" src="./js/app.js"></script>
+</html>

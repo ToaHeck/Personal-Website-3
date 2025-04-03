@@ -1,0 +1,53 @@
+/* Variables */
+:root {
+    --primary-color: #7B1FB5;                   /* Purple */
+    --secondary-color: #682E8C;                 /* Slightly Darker Purple */
+    --tertiary-color: #53167A;                  /* Dark Purple; almost black */
+    --text-color: #EDE8EC;                      /* Off-white */
+    --title-color: #EEDEF4;                     /* Off-purple */
+    --background-color-primary: #3A393A;        /* Dark gray */
+    --background-color-secondary: #2D1A38;      /* Dark Purple Black */
+    --black-color: #301F3C;                     /* "Black" */
+  }
+
+body{
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    color: var(--title-color) !important;
+}
+
+.icon-square{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+}
+
+.nav-item a, .nav-item button{
+    color: var(--primary-color);
+}
+
+
+
+/* Gradient Animation */
+.gradient-background {
+    background: linear-gradient(300deg, var(--tertiary-color), var(--black-color), var(--secondary-color));
+    background-size: 180% 180%;
+    animation: gradient-animation 10s ease infinite;
+}
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    } 
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+
+
+

@@ -1,0 +1,49 @@
+:root {
+  --primary-color: #7b1fb5;
+  --secondary-color: #682e8c;
+  --tertiary-color: #53167a;
+  --text-color: #ede8ec;
+  --title-color: #eedef4;
+  --background-color-primary: #3a393a;
+  --background-color-secondary: #2d1a38;
+  --black-color: #301f3c;
+}
+
+body {
+  color: var(--text-color);
+}
+
+h1, h2, h3 {
+  color: var(--title-color) !important;
+}
+
+.icon-square {
+  border-radius: .75rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+.nav-item a, .nav-item button {
+  color: var(--primary-color);
+}
+
+.gradient-background {
+  background: linear-gradient(300deg, var(--tertiary-color), var(--black-color), var(--secondary-color));
+  background-size: 180% 180%;
+  animation: 10s infinite gradient-animation;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+/*# sourceMappingURL=Personal-Website-3.77a9bc14.css.map */
