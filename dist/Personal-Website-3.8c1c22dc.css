@@ -6342,6 +6342,10 @@ html {
   background-color: var(--tertiary-color);
 }
 
+#current-location {
+  opacity: .5;
+}
+
 .unstyled-link {
   color: inherit !important;
   background: none !important;
