@@ -6565,11 +6565,11 @@ html {
 }
 
 .card-hover {
-  transition: transform .3s;
+  transition: box-shadow .3s;
 }
 
 .card-hover:hover {
-  transform: translateY(-10px);
+  box-shadow: 0 0 20px 5px #fffc;
 }
 
 .rolodex {
