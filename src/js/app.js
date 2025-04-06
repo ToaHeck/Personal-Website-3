@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
     if (enterButton) {
         enterButton.addEventListener("click", closeSplash);
     }
+
+    
+    //start clock
+    getData();
 });
 
 
@@ -84,5 +88,3 @@ function updateTime() {
     setTimeout(updateTime, 1000);
 }
 
-// Initial call
-getData();

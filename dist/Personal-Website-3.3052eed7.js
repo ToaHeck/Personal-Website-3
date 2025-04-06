@@ -685,6 +685,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Attach the event listener to the button after the DOM is fully loaded
     const enterButton = document.querySelector("#splash-screen button");
     if (enterButton) enterButton.addEventListener("click", closeSplash);
+    //start clock
+    getData();
 });
 // Clock update
 let baseDate;
@@ -719,8 +721,6 @@ function updateTime() {
     document.getElementById('curr-time').innerHTML = `${hour}:${m}:${s} ${half} (PST)`;
     setTimeout(updateTime, 1000);
 }
-// Initial call
-getData();
 
 },{"bootstrap":"hjCRY"}],"hjCRY":[function(require,module,exports,__globalThis) {
 /*!
