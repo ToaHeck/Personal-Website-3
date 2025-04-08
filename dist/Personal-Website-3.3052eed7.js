@@ -689,36 +689,47 @@ document.addEventListener("DOMContentLoaded", function() {
     getData();
 });
 // Clock update
-let baseDate;
+// Initialize baseDate
+let baseDate = null;
+// Function to pad single digits with a leading zero
 function checkMinutes(i) {
     return i < 10 ? "0" + i : i;
 }
+// Function to fetch the current time data from the Netlify Function
 async function getData() {
-    const url = 'https://timeapi.io/api/time/current/zone?timeZone=America%2FLos_Angeles';
+    const url = '/.netlify/functions/fetchTime';
     try {
         const response = await fetch(url);
+        if (!response.ok) {
+            const text = await response.text();
+            console.error('Error response:', text);
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const data = await response.json();
-        console.log("API Response:", data);
-        // Using dateTime from the API response
-        baseDate = new Date(data.dateTime);
+        console.log(data);
+        // Initialize baseDate with the fetched datetime
+        baseDate = new Date(data.datetime);
+        // Start the clock update loop
         updateTime();
     } catch (error) {
-        console.error("Error fetching time:", error);
+        console.error('Error fetching time data:', error);
     }
 }
+// Function to update the time display every second
 function updateTime() {
     if (!baseDate) return;
     // Increment seconds
     baseDate.setSeconds(baseDate.getSeconds() + 1);
     let h = baseDate.getHours();
     const m = checkMinutes(baseDate.getMinutes());
-    const s = checkMinutes(baseDate.getSeconds()); // Using checkMinutes for seconds
+    const s = checkMinutes(baseDate.getSeconds());
     const half = h < 12 ? "AM" : "PM";
-    // Fix hour display
-    let hour = h;
-    if (h > 12) hour = h - 12;
-    else if (h === 0) hour = 12; // Handle midnight
-    document.getElementById('curr-time').innerHTML = `${hour}:${m}:${s} ${half} (PST)`;
+    // Convert to 12-hour format
+    h = h % 12 || 12;
+    // Update the time display
+    document.getElementById('curr-time').innerHTML = `${h}:${m}:${s} ${half} (PST)`;
+    //console.log(s);
+    // Schedule the next update
     setTimeout(updateTime, 1000);
 }
 
