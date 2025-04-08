@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 exports.handler = async function(event, context) {
-    const apiKey = process.env.API_KEY;
+    const apiKey = process.env.API_NINJAS_KEY;
     const url = 'https://api.api-ninjas.com/v1/worldtime?timezone=America/Los_Angeles';
 
     try {
@@ -11,9 +11,11 @@ exports.handler = async function(event, context) {
         });
 
         if (!response.ok) {
+            const errorBody = await response.text();
+            console.error(`Error response: ${response.status} - ${errorBody}`);
             return {
                 statusCode: response.status,
-                body: JSON.stringify({ error: 'Failed to fetch data' }),
+                body: JSON.stringify({ error: `Failed to fetch data: ${errorBody}` }),
             };
         }
 
@@ -22,7 +24,8 @@ exports.handler = async function(event, context) {
             statusCode: 200,
             body: JSON.stringify(data),
         };
-  } catch (error) {
+    } catch (error) {
+        console.error('Fetch error:', error);
         return {
             statusCode: 500,
             body: JSON.stringify({ error: 'Internal Server Error' }),
