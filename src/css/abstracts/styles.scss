@@ -70,6 +70,11 @@ html {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.skill-card {
+    background: rgba(74, 1, 114, 0.505);
+    backdrop-filter: blur(10px);
+}
+
 .portfolio-blur {
     position: relative;
     background: rgba(255, 255, 255, 0.1);
@@ -79,6 +84,7 @@ html {
     overflow: hidden;
 
 }
+
 
 /* Glow effect styles */
 .cursor-glow {

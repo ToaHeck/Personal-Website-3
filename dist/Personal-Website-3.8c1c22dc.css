@@ -6393,6 +6393,11 @@ html {
   border-bottom: 1px solid #fff3;
 }
 
+.skill-card {
+  backdrop-filter: blur(10px);
+  background: #4a017281;
+}
+
 .portfolio-blur {
   background: #ffffff1a;
   border: 1px solid #fff3;
