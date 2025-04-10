@@ -289,9 +289,16 @@ html {
 }
 
 .card-hover:hover {
-    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
 }
 
+.text-hover {
+    transition: text-shadow 0.3s ease;
+}
+
+.text-hover:hover{
+    text-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.9);
+}
 
 
 

@@ -6583,7 +6583,15 @@ html {
 }
 
 .card-hover:hover {
-  box-shadow: 0 0 20px 5px #ffffff1a;
+  box-shadow: 0 0 20px 5px #fff3;
+}
+
+.text-hover {
+  transition: text-shadow .3s;
+}
+
+.text-hover:hover {
+  text-shadow: 0 0 0 5px #ffffffe6;
 }
 
 .rolodex {
