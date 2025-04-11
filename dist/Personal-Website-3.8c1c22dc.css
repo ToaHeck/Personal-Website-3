@@ -6395,7 +6395,7 @@ html {
 
 .skill-card {
   backdrop-filter: blur(10px);
-  background: #4a017281;
+  background: #4f0775e3;
 }
 
 .portfolio-blur {
@@ -6580,6 +6580,7 @@ html {
 
 .card-hover {
   transition: box-shadow .3s;
+  box-shadow: 0 0 #fff0;
 }
 
 .card-hover:hover {
@@ -6588,10 +6589,11 @@ html {
 
 .text-hover {
   transition: text-shadow .3s;
+  box-shadow: 0 0 #fff0;
 }
 
 .text-hover:hover {
-  text-shadow: 0 0 0 5px #ffffffe6;
+  text-shadow: 0 0 50px 5px #ffffffe6;
 }
 
 .rolodex {
