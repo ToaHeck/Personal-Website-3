@@ -1,3 +1,9 @@
 [build]
   functions = "netlify/functions"
   publish = "dist"
+  command = "parcel build src/index.html"
+
+[dev]
+  command = "parcel"
+  targetPort = 1234
+  publish = "dist"

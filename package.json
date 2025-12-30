@@ -4,7 +4,7 @@
   "description": "",
   "source": "./src/index.html",
   "scripts": {
-    "dev": "parcel",
+    "dev": "netlify dev",
     "start": "parcel index.html",
     "build": "parcel build src/index.html"
   },
@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.14.2",
+    "netlify-cli": "^17.36.4",
     "parcel": "^2.14.2"
   },
   "dependencies": {
