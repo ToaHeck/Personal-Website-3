@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 exports.handler = async function(event, context) {
     const apiKey = process.env.API_NINJAS_KEY;
     //COMMENT OUT FOR TESTING DURING DEV SO TOKENS AREN'T USED UP
-    //const url = 'https://api.api-ninjas.com/v1/worldtime?timezone=America/Los_Angeles';
+    const url = 'https://api.api-ninjas.com/v1/worldtime?timezone=America/Los_Angeles';
 
     try {
         const response = await fetch(url, {
